@@ -1,7 +1,5 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
 var packageBody,ground
-var rect1, rect2, rect3;
-
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -17,19 +15,10 @@ function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
 	
-rect1 = createSprite(400,650,140,20);
-rect1.shapeColor = color(200,0,0);
-
-rect2 = createSprite(335,620,20,100);
-rect2.shapeColor = color(200,0,0);
-
-rect3 = createSprite(465,620,20,100);
-rect3.shapeColor = color(200,0,0);
 
 	packageSprite=createSprite(width/2, 80, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
-	
 
 	helicopterSprite=createSprite(width/2, 200, 10,10);
 	helicopterSprite.addImage(helicopterIMG)
@@ -59,23 +48,15 @@ rect3.shapeColor = color(200,0,0);
 function draw() {
   rectMode(CENTER);
   background(0);
-  
-  packageSprite.x = packageBody.position.x
-  packageSprite.y = packageBody.position.y
-
-
+  packageSprite.x= packageBody.position.x 
+  packageSprite.y= packageBody.position.y 
   drawSprites();
  
 }
 
-function KeyPressed() {
+function keyPressed() {
  if (keyCode === DOWN_ARROW) {
-
-	Matter.Body.setStatic(packageBody,false);
-
-
+    Matter.Body.setStatic(packageBody,false);
+    
   }
 }
-
-
-
